@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.winky-rough-googlefont {
+  font-family: "Winky Rough", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    padding-left: 0;
+    margin-bottom: 0;
+}
+li{
+    list-style: none;
+}
+/* top */
+.topnav{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.topnav p{
+    margin-bottom: 0;
+}
+.topnav a{
+    color: #000;
+}
+
+/* header */
+header{
+    background-color: #000;
+}
+header ul li a{
+    color: #ffffff;
+    font-weight: 500;
+}
+header ul li a:hover{
+    color: #057fb2;
+}
+.activeitem{
+    color: #057fb2;
+}
+header i{
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* banner slider */
+
+.carousel-item img{
+    height: auto;
+    width: 100vw;
+    position: relative;
+}
+.carousel-text{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.carousel-text h5{
+    font-size: 1.75rem;
+    color: #fed000;
+}
+.carousel-text h1{
+    font-size: 6rem;
+    color: #ffffff;
+}
+.carousel-text p{
+    color: #ffffff;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+ .btn1{
+    background-color: #fed000;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+position: relative;
+  overflow: hidden;       
+    /* z-index: 1; */
+}
+/* .btn1::before{
+    content: "";
+    height: 100%;
+    width: 0;
+    background-color: #057fb2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2rem;
+    transition: 0.3s;
+     z-index: -1; 
+}
+.btn1:hover::before{
+    width: 100%;
+} */
+
+.carousel-text .btn2{
+    background-color: #057fb2;
+    color: #ffffff;
+     font-size: 1.2rem;
+    padding: 1rem 2rem;
+      border-radius: 2rem;
+}
+
+@media(min-width:1440px){
+  .carousel-item img{
+    height: 100vh;
+}  
+}
+
+@media(max-width:1024px){
+.carousel-text h1{
+    font-size: 4rem;
+    color: #ffffff;
+}
+.carousel-text p{
+    width: 70%;
+}
+}
+
+@media(max-width:768px){
+.carousel-text h5{
+    font-size: 1.2rem;
+}
+.carousel-text h1{
+    font-size: 2.5rem;
+}
+.carousel-text p{
+    margin-bottom: 1rem;
+}
+.btn1, .carousel-text .btn2{
+    font-size: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+}
+
+@media(max-width:462px){
+.carousel-text h5{
+    font-size: 1rem;
+}
+.carousel-text h1{
+    font-size: 2rem;
+}
+}
+
+/* about section */
+
+.aboutleft span{
+color: #fed000;
+}
+.aboutleft h1{
+font-size: 2.5rem;
+}
+.calling{
+    font-size: 1.25rem;
+}
+@media(min-width:1440px){
+ .aboutleft h1{
+font-size: 3rem;
+}
+.calling{
+    font-size: 1.75rem;
+}  
+}
+@media(max-width:435px){
+.aboutleft h1{
+font-size: 1.5rem;
+}
+}
+
+.reliability i{
+    font-size: 8rem;
+    color: #fed000;
+}
+.reliability h5{
+     font-size: 1.75rem;
+}
+
+@media(max-width:1024px){
+.reliability i{
+    font-size: 6rem;
+}
+.reliability h5{
+     font-size: 1.5rem;
+}
+}
+
+/* services */
+.mainheading{
+    font-size: 4rem;
+}
+@media(max-width:768px){
+.mainheading{
+    font-size: 2.5rem;
+}
+}
+@media(max-width:462px){
+.mainheading{
+    font-size: 2rem;
+}
+}
+
+.activediv{
+    box-shadow: 2px 2px 10px #000;
+}
+.truncate {
+  display: -webkit-box; /* Enables the flexbox-like behavior */
+  -webkit-box-orient: vertical; /* Sets the box orientation to vertical */
+  overflow: hidden; /* Hides overflowing text */
+  text-overflow: ellipsis; /* Adds the ellipsis (...) */
+  -webkit-line-clamp: 3; /* Limits the text to 3 lines */
+  /* line-height: 1.5; Adjusts line height for better spacing */
+  /* max-height: calc(1.5em * 3); Ensures the height matches 3 lines */
+}
+.planscard h5{
+    color:#fed000;
+}
+.row.planscard > div > div{
+    border-radius: 20px;
+box-shadow: 5px 1px 10px #00000096;   
+transition: 0.3s; 
+}
+.row.planscard > div > div:hover{
+box-shadow: 0px 0px 10px #00000096;    
+transform:translateY(10px);
+}
+
+
+/* footer */
+footer i{
+    font-size: 3rem;
+}
+footer span{
+    color: #fed000;
+}
+
+
+
+
+
+
+
+main {
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 800px;
+  margin: 10px auto;
+ 
+}
+
+
+main .container {
+  width: 100%;
+  height: 400px;
+  margin: 10px auto;
+  border: solid 1px #ccc;
+  background: url(../images/PPBanner1.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  div {
+    filter: sepia(75%);
+    height: 100%;
+    width: 10%;
+    max-width: 99%;
+    resize: horizontal;
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-name: preview;
+    background: url(../images/PPBanner2.jpg);
+     background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      background: black;
+      bottom: 0;
+      right: 0;
+      border: solid 1px white;
+      border-right: 0;
+      border-bottom: 0;
+      cursor: col-resize;
+    }
+  }
+}
+
+@keyframes preview {
+    0% {width: 10%;}
+    50% {width: 90%;}
+    100% {width: 10%;}
+}

@@ -1,9 +1,6 @@
 let list= document.querySelector(".bi-list")
 let menu= document.querySelector(".menu") 
 let closeing= document.querySelector(".bi-x")
-console.log(list);
-console.log(menu);
-console.log(closeing);
 list.addEventListener("click", function(){
     menu.style.right="0"
 })
@@ -12,6 +9,16 @@ closeing.addEventListener("click", function(){
 })
 
 
+
+let plancard= document.querySelectorAll(".planscard p")
+plancard.forEach(element => {
+    let icon = document.createElement("i");
+icon.className = "bi bi-arrow-right-circle";
+icon.style.color="#057fb2"
+let space = document.createTextNode(" ");
+ element.insertBefore(space, element.firstChild); // space goes before existing text
+    element.insertBefore(icon, space);
+});
 
 
 

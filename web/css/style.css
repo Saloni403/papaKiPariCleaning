@@ -53,7 +53,7 @@ header ul li a:hover{
 }
 header i{
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /* menu */
@@ -96,7 +96,7 @@ header i{
 /* call icon */
 .callicon{
     position: fixed;
-    top: 80%;
+    bottom: 10%;
     left: 1%;
     z-index: 999;
 filter:drop-shadow(2px 2px 10px #fed000);
@@ -136,6 +136,7 @@ filter:drop-shadow(2px 2px 10px #fed000);
 .carousel-text h1{
     font-size: 6rem;
     color: #ffffff;
+    margin-bottom: 20px;
 }
 .carousel-text p{
     color: #ffffff;
@@ -203,7 +204,7 @@ position: relative;
     margin-bottom: 1rem;
 }
 .btn1, .carousel-text .btn2{
-    font-size: 0.5rem;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
 }
 }
@@ -533,7 +534,7 @@ main .container {
     /* at top */
     .attop{
         position: fixed;
-       top: 80%;
+      bottom: 10%;
     right: 1%;
     z-index: 99;
     display: none;

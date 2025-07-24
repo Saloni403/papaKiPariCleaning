@@ -49,7 +49,7 @@ header ul li a:hover{
     color: #057fb2;
 }
 .activeitem{
-    color: #057fb2;
+    color: #057fb2 !important;
 }
 header i{
     color: #ffffff;

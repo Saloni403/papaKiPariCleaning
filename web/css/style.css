@@ -69,14 +69,15 @@ header i {
   transform: rotate(90deg);
 }
 
-/* .sublist {
+.sublist {
   background-color: #057fb2;
   z-index: 9999;
   position: fixed;
-  bottom: -350px;
+  top:40%;
   padding: 1rem;
   border-radius: 20px;
- display: none;
+ opacity: 0;
+ visibility: hidden;
  transition: 1s ;
 }
 .sublist li{
@@ -90,46 +91,8 @@ header i {
   color: #057fb2;
   border-radius: 20px;
 
-} */
-
-.droparrow {
-  position: relative;
 }
 
-.sublist {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #057fb2;
-  border-radius: 20px;
-  padding: 1rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: 0.5s ease-in-out;
-  width: 220px;
-  z-index: 1000;
-}
-
-.droparrow:hover .sublist,
-.droparrow.active .sublist {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.sublist li a {
-  display: block;
-  padding: 0.5rem;
-  color: white;
-  text-decoration: none;
-}
-
-.sublist li a:hover {
-  background-color: #fff;
-  color: #057fb2;
-  border-radius: 20px;
-}
 
 
 /* menu */
@@ -172,56 +135,33 @@ header i {
   color: #ffffff;
 }
 /* Ensure parent li is positioned */
-.droparrow2 {
-  position: relative;
-}
 .droparrow2 i{
-     display: inline-block;
     transition: transform 0.3s ease-in-out;
+    display: inline-block;
 }
 .droparrow2:hover i {
 transform: rotate(90deg);
 }
-
-/* Style the dropdown menu */
 .sublist2 {
-  position: absolute;
+  position: fixed;
   top: 100%; /* show just below the parent */
-  left: 0;
+  left:1%;
   background-color: #057fb2;
+  
   border-radius: 15px;
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: 0.3s ease-in-out;
- /* width: 100%; */
   z-index: 1000;
 }
-
-/* Reveal on hover */
-.droparrow2:hover .sublist2 {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.sublist2 li a{
+    color: #ffffff !important;
 }
-.sublist2 li{
-    padding: 0.5rem 0 !important;
-}
-/* Optional styling for links */
-.sublist2 li a {
-  display: block;
-  padding: 0.5rem !important;
-  color: white;
-  text-decoration: none;
-  transition:  0.2s;
-  font-size: 1rem !important;
-}
-
-.sublist2 li a:hover {
-  background-color: #fff !important;
-  color: #057fb2 !important;
-  border-radius: 30px !important;
+.sublist2 li a:hover{
+    color: #057fb2 !important;
+    background-color: #ffffff !important;
 }
 
 
@@ -250,7 +190,20 @@ transform: rotate(90deg);
   height: auto;
   width: 100vw;
   position: relative;
+  /* transition: slowZoom 0.3s ease; */
 }
+.carousel-item.active img {
+  animation: slowZoom 10s ease-in-out forwards;
+}
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
 .carousel-text {
   height: 100%;
   width: 100%;
@@ -354,7 +307,10 @@ transform: rotate(90deg);
 }
 
 /* about section */
-
+.aboutsec img{
+    box-shadow: 5px 5px 20px #000;
+    border-radius: 20px;
+}
 .aboutleft span {
   color: #fed000;
 }
@@ -399,7 +355,6 @@ transform: rotate(90deg);
 .mainheading {
   font-size: 4rem;
 }
-
 @media (max-width: 768px) {
   .mainheading {
     font-size: 2.5rem;
@@ -414,6 +369,7 @@ transform: rotate(90deg);
 .activediv {
   box-shadow: 2px 2px 10px #000;
 }
+
 .truncate {
   display: -webkit-box; /* Enables the flexbox-like behavior */
   -webkit-box-orient: vertical; /* Sets the box orientation to vertical */
@@ -435,7 +391,17 @@ transform: rotate(90deg);
   box-shadow: 0px 0px 10px #00000096;
   transform: translateY(10px);
 }
-
+.ctg img{
+    filter: grayscale();
+    
+}
+.ctgdes{
+    display: none;
+}
+.cardshadow{
+    box-shadow: 2px 2px 20px #0000005c;
+    border-radius: 10px;
+}
 /* footer */
 footer i {
   font-size: 3rem;

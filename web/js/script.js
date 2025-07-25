@@ -41,20 +41,85 @@ function screenScroll(){
 }
  
 
+const dropdown = document.querySelector('.droparrow');
+const sublist = document.querySelector('.sublist');
 
-
-// document.querySelector(".droparrow").addEventListener('mouseover',()=>{
-//   // document.querySelector(".sublist").style.display="block"
-//    document.querySelector(".sublist").style.bottom="45%"
+// if (window.innerWidth > 768){
+// dropdown.addEventListener('mouseover',()=>{
+//   sublist.style.opacity="1"
+//   sublist.style.visibility="visible"
+//    sublist.style.top="20%"
 // })
-// document.querySelector(".droparrow").addEventListener('mouseout',()=>{
-//   // document.querySelector(".sublist").style.display="none"
-//    document.querySelector(".sublist").style.bottom="-350px"
-// })
+// dropdown.addEventListener('mouseout',()=>{
+//   sublist.style.opacity="0"
+//   sublist.style.visibility="hidden"
+//    sublist.style.top="40%"
+// })}
  
-const droparrow = document.querySelector(".droparrow");
+let isOpen = false;
 
-droparrow.addEventListener("click", (e) => {
-  e.preventDefault(); // prevent link from navigating
-  droparrow.classList.toggle("active");
+dropdown.addEventListener('click', (e) => {
+  e.preventDefault(); // prevent link jump
+  isOpen = !isOpen;
+
+  if (isOpen) {
+    sublist.style.opacity = "1";
+    sublist.style.visibility = "visible";
+    sublist.style.top = "20%";
+  } else {
+    sublist.style.opacity = "0";
+    sublist.style.visibility = "hidden";
+    sublist.style.top = "40%";
+  }
 });
+
+
+
+const dropdown2 = document.querySelector('.droparrow2');
+const sublist2 = document.querySelector('.sublist2');
+dropdown2.addEventListener('click', (e) => {
+  e.preventDefault(); // prevent link jump
+  isOpen = !isOpen;
+
+  if (isOpen) {
+    sublist2.style.opacity = "1";
+    sublist2.style.visibility = "visible";
+    sublist2.style.top = "75%";
+  } else {
+    sublist2.style.opacity = "0";
+    sublist2.style.visibility = "hidden";
+    sublist2.style.top = "100%";
+  }
+});
+
+
+
+
+
+let ctgCards =document.querySelectorAll(".ctg")
+let ctgDescs =document.querySelectorAll(".ctgdes")
+function showCtgDesc(event) {
+  // Find the clicked .ctg element
+  let clickedCard = event.currentTarget.querySelector(".ctg");
+
+  // Find index of clicked .ctg
+  let index = Array.from(ctgCards).indexOf(clickedCard);
+
+  // Hide all descriptions
+ctgCards.forEach(cardshd => cardshd.classList.remove("cardshadow"));
+  clickedCard.classList.toggle("cardshadow")
+  ctgDescs.forEach(desc => desc.style.display = "none")
+  // Show the matching one
+  if (ctgDescs[index]) {
+    ctgDescs[index].style.display = "flex"; // or "block" based on your layout
+  }
+}
+
+// Initial hide
+// ctgCards.classList.remove("cardshadow")
+ctgCards.forEach(cardshd => cardshd.classList.remove("cardshadow"));
+ctgDescs.forEach(desc => desc.style.display = "none");
+if (ctgDescs[0]) {
+  ctgDescs[0].style.display = "flex";
+}
+

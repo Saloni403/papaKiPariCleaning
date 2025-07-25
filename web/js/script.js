@@ -40,3 +40,21 @@ function screenScroll(){
 });
 }
  
+
+
+
+// document.querySelector(".droparrow").addEventListener('mouseover',()=>{
+//   // document.querySelector(".sublist").style.display="block"
+//    document.querySelector(".sublist").style.bottom="45%"
+// })
+// document.querySelector(".droparrow").addEventListener('mouseout',()=>{
+//   // document.querySelector(".sublist").style.display="none"
+//    document.querySelector(".sublist").style.bottom="-350px"
+// })
+ 
+const droparrow = document.querySelector(".droparrow");
+
+droparrow.addEventListener("click", (e) => {
+  e.preventDefault(); // prevent link from navigating
+  droparrow.classList.toggle("active");
+});

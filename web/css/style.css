@@ -40,6 +40,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 99;
+  
 }
 header ul li a {
   color: #ffffff;
@@ -56,7 +57,7 @@ header i {
   font-size: 1.75rem;
 
 }
-
+ 
  .droparrow i {
   font-size: 0.75rem;
   display: inline-block;
@@ -72,19 +73,21 @@ header i {
 .sublist {
   background-color: #057fb2;
   z-index: 9999;
-  position: fixed;
-  top:40%;
   padding: 1rem;
   border-radius: 20px;
- opacity: 0;
- visibility: hidden;
- transition: 1s ;
+  position: absolute;
+  /* display: none; */
+opacity: 0;
+visibility: hidden;
+  transition: 0.3s;
 }
 .sublist li{
   padding: 0.5rem 0 ;
 }
 .sublist li a {
-  padding: 0.5rem ;
+  /* display: block; */
+  padding: 0.5rem 0.75rem;
+ width: 100%;
 }
 .sublist li a:hover {
   background-color: #fff;
@@ -95,10 +98,9 @@ header i {
 
 
 
+
 /* menu */
-.tcol{
-    color: #057fb2;
-}
+
 .menu {
   background-color: rgba(0, 0, 0, 0.847);
   backdrop-filter: blur(10px);
@@ -128,41 +130,51 @@ header i {
 .menu ul li a {
   padding: 0.75rem 1rem;
   border-radius: 30px;
-  font-size: 1.25rem;
 }
 .menu ul li a:hover {
   background-color: #057fb2;
   color: #ffffff;
 }
-/* Ensure parent li is positioned */
-.droparrow2 i{
-    transition: transform 0.3s ease-in-out;
-    display: inline-block;
+ .droparrow2 i {
+  font-size: 0.75rem;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+   color: #057fb2;
+   font-weight: bold !important;
 }
-.droparrow2:hover i {
-transform: rotate(90deg);
+
+ .droparrow2:hover i {
+  transform: rotate(90deg);
+  color: #fff;
 }
+
 .sublist2 {
-  position: fixed;
-  top: 100%; /* show just below the parent */
-  left:1%;
   background-color: #057fb2;
-  
-  border-radius: 15px;
+  z-index: 9999;
   padding: 1rem;
+  border-radius: 20px;
+  position: absolute;
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: 0.3s ease-in-out;
-  z-index: 1000;
+visibility: hidden;
+  transition: 0.3s;
+  
 }
-.sublist2 li a{
-    color: #ffffff !important;
+.sublist2 li{
+  padding: 0.5rem 0 ;
 }
-.sublist2 li a:hover{
-    color: #057fb2 !important;
-    background-color: #ffffff !important;
+.sublist2 li a {
+  /* display: block; */
+color: #fff;
+  padding: 0.5rem 0.75rem;
+ width: 100%;
 }
+.sublist2 li a:hover {
+  background-color: #fff !important;
+  color: #057fb2 !important;
+  border-radius: 20px;
+
+}
+
 
 
 
@@ -230,39 +242,52 @@ transform: rotate(90deg);
   width: 50%;
   margin-bottom: 2rem;
 }
-.btn1 {
-  background-color: #fed000;
-  color: #ffffff;
+.btn1 ,.btn2{
+  color: #ffffff !important;
   font-size: 1.2rem;
   padding: 1rem 2rem;
   border-radius: 2rem;
   position: relative;
+  z-index: 1;
+  transition: 0.3s ;
   overflow: hidden;
-  /* z-index: 1; */
 }
-/* .btn1::before{
-    content: "";
-    height: 100%;
-    width: 0;
-    background-color: #057fb2;
-    position: absolute;
-    top: 0;
-    left: 0;
+.btn1{
+  background-color: #fed000;
+}
+.btn2{
+   background-color: #057fb2;
+}
+.btn1::after, .btn2::after{
+  content: "";
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease;
+  position: absolute;
     border-radius: 2rem;
-    transition: 0.3s;
-     z-index: -1; 
+  z-index: 0;
 }
-.btn1:hover::before{
-    width: 100%;
-} */
+.btn1::after{
+   background-color: #057fb2;
+}
+.btn2::after{
+   background-color: #fed000;
+}
+.btn1:hover::after, .btn2:hover::after{
+  width: 100%;
+  opacity: 1;
+}
+.btn1 span , .btn2 span {
+  position: relative;
+  z-index: 1; /* this keeps text above the ::after */
+  color: #fff !important;
+}
 
-.carousel-text .btn2 {
-  background-color: #057fb2;
-  color: #ffffff;
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-}
+
+
 
 @media (min-width: 1440px) {
   .carousel-item img {
@@ -311,8 +336,25 @@ transform: rotate(90deg);
     box-shadow: 5px 5px 20px #000;
     border-radius: 20px;
 }
-.aboutleft span {
+.aboutleft span{
   color: #fed000;
+}
+ .linebefore {
+  color: #fed000;
+  position: relative;
+  display: inline-block;
+  padding-left: 60px;
+}
+ .linebefore::before{
+content: "";
+width: 50px;
+height: 2px;
+background-color: #fed000;
+position: absolute;
+left: 0;
+top: 50%;
+transform: translateY(-50%);
+
 }
 .aboutleft h1 {
   font-size: 2.5rem;
@@ -325,7 +367,7 @@ transform: rotate(90deg);
     font-size: 3rem;
   }
   .calling {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 435px) {
@@ -337,6 +379,12 @@ transform: rotate(90deg);
 .reliability i {
   font-size: 6rem;
   color: #fed000;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+.reliability:hover i{
+/* border: 2px solid red; */
+transform: translateY(-10px);
 }
 .reliability h5 {
   font-size: 1.75rem;
@@ -370,6 +418,66 @@ transform: rotate(90deg);
   box-shadow: 2px 2px 10px #000;
 }
 
+.autoplayimg{
+  overflow: hidden;
+   position: relative;
+}
+.autoplayimg div{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+ top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.autoplay .autoplayimg::after{
+content: "";
+position: absolute;
+top: -100px;
+left: 50%;
+width: 2px;
+height: 80px;
+background-color: #fff;
+z-index: 2;
+transform: translateX(-50%);
+/* display: block; */
+transition: 0.3s;
+}
+.autoplay .autoplayimg::before{
+content: "";
+position: absolute;
+top: 50%;
+left: -100px;
+width: 80px;
+height: 2px;
+background-color: #fff;
+z-index: 2;
+transform: translateY(-50%);
+/* display: block; */
+transition: 0.3s;
+}
+.autoplay .col-4 img{
+ 
+   transition: 0.5s ease-in-out;
+   z-index: 1;
+}
+.autoplay .col-4:hover img{
+transform: scale(1.2);
+}
+ .col-4:hover .autoplayimg::before{
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+ .col-4:hover .autoplayimg::after{
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+.col-4:hover .autoplayimg div{
+  opacity: 1;
+}
+
+
 .truncate {
   display: -webkit-box; /* Enables the flexbox-like behavior */
   -webkit-box-orient: vertical; /* Sets the box orientation to vertical */
@@ -402,9 +510,15 @@ transform: rotate(90deg);
     box-shadow: 2px 2px 20px #0000005c;
     border-radius: 10px;
 }
+
+
 /* footer */
 footer i {
   font-size: 3rem;
+  color: #fed000;
+}
+footer .col-lg-3:hover i{
+  color: #fff;
 }
 @media (max-width: 768px) {
   footer i {
@@ -580,9 +694,18 @@ main .container {
 .Locationdiv i {
   font-size: 1.5rem;
   margin-right: 1rem;
+  box-sizing: border-box;
   color: #fed000;
 }
-
+.Locationdiv i , .Locationdiv h5{
+  transition: 0.3s;
+}
+.Locationdiv .col-sm-6:hover  i{
+transform: scale(1.3);
+}
+.Locationdiv .col-sm-6:hover h5{
+color: #fed000;
+}
 @media (min-width: 1440px) {
   .carwashform {
     width: 60%;

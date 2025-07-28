@@ -41,23 +41,10 @@ function screenScroll(){
 }
  
 
+
+ let isOpen=0
 const dropdown = document.querySelector('.droparrow');
 const sublist = document.querySelector('.sublist');
-
-// if (window.innerWidth > 768){
-// dropdown.addEventListener('mouseover',()=>{
-//   sublist.style.opacity="1"
-//   sublist.style.visibility="visible"
-//    sublist.style.top="20%"
-// })
-// dropdown.addEventListener('mouseout',()=>{
-//   sublist.style.opacity="0"
-//   sublist.style.visibility="hidden"
-//    sublist.style.top="40%"
-// })}
- 
-let isOpen = false;
-
 dropdown.addEventListener('click', (e) => {
   e.preventDefault(); // prevent link jump
   isOpen = !isOpen;
@@ -65,30 +52,29 @@ dropdown.addEventListener('click', (e) => {
   if (isOpen) {
     sublist.style.opacity = "1";
     sublist.style.visibility = "visible";
-    sublist.style.top = "20%";
+    // sublist.style.top = "75%";
   } else {
     sublist.style.opacity = "0";
     sublist.style.visibility = "hidden";
-    sublist.style.top = "40%";
+    // sublist.style.top = "100%";
   }
 });
 
 
 
+let isOpen2=0
 const dropdown2 = document.querySelector('.droparrow2');
 const sublist2 = document.querySelector('.sublist2');
 dropdown2.addEventListener('click', (e) => {
   e.preventDefault(); // prevent link jump
-  isOpen = !isOpen;
+  isOpen2 = !isOpen2;
 
-  if (isOpen) {
+  if (isOpen2) {
     sublist2.style.opacity = "1";
     sublist2.style.visibility = "visible";
-    sublist2.style.top = "75%";
   } else {
     sublist2.style.opacity = "0";
     sublist2.style.visibility = "hidden";
-    sublist2.style.top = "100%";
   }
 });
 

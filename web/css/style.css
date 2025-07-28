@@ -130,6 +130,7 @@ visibility: hidden;
 .menu ul li a {
   padding: 0.75rem 1rem;
   border-radius: 30px;
+  color: #057fb2;
 }
 .menu ul li a:hover {
   background-color: #057fb2;
@@ -164,16 +165,16 @@ visibility: hidden;
 }
 .sublist2 li a {
   /* display: block; */
-color: #fff;
+color: #fff !important;
   padding: 0.5rem 0.75rem;
  width: 100%;
 }
-.sublist2 li a:hover {
+/* .sublist2 li a:hover {
   background-color: #fff !important;
   color: #057fb2 !important;
   border-radius: 20px;
 
-}
+} */
 
 
 
